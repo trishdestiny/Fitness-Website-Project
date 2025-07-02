@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Nialina Fitness - Mind & Body Wellness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Quicksand:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    /* Reset & base */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Lato', 'Quicksand', sans-serif;
+      margin: 0;
+      background: #f9fafb;
+      color: #333;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+    a {
+      color: #556b2f;
+      text-decoration: none;
+    }
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    h1, h2, h4 {
+      font-weight: 700;
+      color: #556b2f;
+    }
+    p {
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    /* Header */
+    header {
+      background: #a8d8b9;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    #branding h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      padding: 1rem 0;
+    }
+    #branding a {
+      color: #344e41;
+    }
+    nav.primary-navigation {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links li a {
+      font-weight: 500;
+      padding: 1rem 0;
+      display: block;
+      position: relative;
+    }
+    .nav-links li.current a {
+      font-weight: 700;
+      border-bottom: 3px solid #556b2f;
+    }
+
+    /* Mobile nav toggle */
+    .mobile-nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 1rem;
+      position: relative;
+      z-index: 1100;
+    }
+    .hamburger-line {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: #344e41;
+      margin: 5px 0;
+      transition: all 0.3s ease;
+    }
+
+    /* Main */
+    main {
+      padding: 3rem 0 5rem;
+    }
+    section {
+      margin-bottom: 4rem;
+    }
+    .page-title-section {
+      background: #d0e8d0;
+      padding: 2rem 0;
+      text-align: center;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(85, 107, 47, 0.2);
+    }
+    .page-title-section h2 {
+      margin-bottom: 0.5rem;
+      font-size: 2.5rem;
+    }
+    .page-title-section p {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #556b2f;
+    }
+
+    /* Philosophy Section */
+    #about-main p {
+      max-width: 700px;
+      margin: 1rem auto;
+      font-size: 1.1rem;
+      color: #3d4f3d;
+    }
+
+    /* Team Section */
+    #team .team-members {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .trainer-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      width: 280px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      will-change: transform;
+    }
+    .trainer-card img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 4px solid #a8d8b9;
+      box-shadow: 0 2px 10px rgba(85, 107, 47, 0.15);
+    }
+    .trainer-card h4 {
+      margin: 0.5rem 0 0.25rem;
+      color: #344e41;
+    }
+    .trainer-title {
+      font-weight: 500;
+      color: #7a8a6f;
+      margin-bottom: 1rem;
+    }
+    .trainer-card p {
+      font-weight: 300;
+      font-size: 0.95rem;
+      color: #556b2f;
+    }
+
+    /* Values Section */
+    #our-values .values-grid {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+    .value-item {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(85, 107, 47, 0.15);
+      padding: 2rem 1.5rem;
+      flex: 1 1 250px;
+      max-width: 300px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      cursor: default;
+      will-change: transform;
+    }
+    .value-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #a8d8b9;
+    }
+    .value-item h4 {
+      margin-bottom: 0.5rem;
+      color: #344e41;
+    }
+    .value-item p {
+      font-weight: 300;
+      color: #556b2f;
+    }
+
+    /* Footer */
+    footer {
+      background: #a8d8b9;
+      padding: 1.5rem 0;
+      text-align: center;
+      color: #344e41;
+      font-weight: 300;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    }
+    footer nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 0.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    footer nav ul li a {
+      color: #344e41;
+      font-weight: 500;
+    }
+    footer p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    /* Cursor dots */
+    .cursor-dot,
+    .cursor-dot-outline {
+      position: fixed;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 1500;
+      transition: transform 0.15s ease-out;
+      mix-blend-mode: difference;
+    }
+    .cursor-dot-outline {
+      width: 40px;
+      height: 40px;
+      border: 2px solid #556b2f;
+      transform: translate(-50%, -50%);
+    }
+    .cursor-dot {
+      width: 12px;
+      height: 12px;
+      background: #556b2f;
+      transform: translate(-50%, -50%);
+    }
+
+    /* Reveal on scroll */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      will-change: opacity, transform;
+    }
+    .reveal-on-scroll.revealed {
+      opacity: 1;
+      transform: none;
+    }
+
+  
+.image-highlight {
+  max-width: 1000px;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-highlight img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+  border-radius: 16px;
+}
+
+.image-highlight:hover img {
+  transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+  .image-highlight {
+    margin: 1.5rem 1rem;
+  }
+}
+
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #a8d8b9;
+        position: absolute;
+        top: 60px;
+        right: 1rem;
+        width: 200px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+      .nav-links.show {
+        display: flex;
+      }
+      .mobile-nav-toggle {
+        display: block;
+      }
+      #team .team-members {
+        justify-content: center;
+      }
+      #our-values .values-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="cursor-dot-outline"></div>
+  <div class="cursor-dot"></div>
+
+  <header>
+    <div class="container" style="display:flex; align-items:center; justify-content:space-between;">
+      <div id="branding">
+        <h1><a href="index.html">Nialina Fitness</a></h1>
+      </div>
+      <button
+        class="mobile-nav-toggle"
+        aria-controls="primary-navigation"
+        aria-expanded="false"
+        aria-label="Toggle Menu"
+      >
+        <span class="sr-only">Menu</span>
+        <span class="hamburger-line line-top"></span>
+        <span class="hamburger-line line-middle"></span>
+        <span class="hamburger-line line-bottom"></span>
+      </button>
+      <nav id="primary-navigation" class="primary-navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li class="current"><a href="about.html">About Us</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="signup.php">Sign Up</a></li>
+          <li><a href="member_login.php">Member Login</a></li>
+          <li><a href="admin_login.php">Admin Login</a></li>
+          <!--<li><a href="login.html">Login</a></li>-->
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-title-section reveal-on-scroll">
+      <div class="container">
+        <h2>Our Story & Philosophy</h2>
+        <p>Balancing physical strength with mental clarity.</p>
+      </div>
+    </section>
+
+    <section id="about-main" class="section reveal-on-scroll">
+      <div class="container">
+        <h2>Our Philosophy</h2>
+        <p>
+          At Nialina Fitness, we believe true wellness comes from balancing physical strength with mental clarity. Founded on the principles of mindful movement and personalized support, our mission is to guide you towards achieving sustainable health goals in a calm, encouraging environment. We focus on holistic well-being, integrating fitness routines that nourish both the body and the mind.
+        </p>
+        <p>
+          Our approach is centered around you. We understand that every individual's journey is unique, which is why we tailor our programs to fit your specific needs, lifestyle, and aspirations. Whether you're starting your fitness journey or looking to deepen your practice, Nialina Fitness provides the expertise and support to help you find your strength and achieve your zen.
+        </p>
+        <img src="Image/fitness4.jpeg" alt="Mind-body wellness at Nialina" style="display:block; margin: 2rem auto; max-width:100%; border-radius:12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+
+      </div>
+    </section>
+
+    <section id="team" class="section reveal-on-scroll">
+  <div class="container">
+    <h2>Meet the Founders</h2>
+    <div class="team-members">
+      
+      <!-- Nia Card -->
+      <div class="trainer-card tilt-card reveal-on-scroll" style="animation-delay: 0.2s;">
+        <img src="Image/Nia.jpeg" alt="Founder Nia" />
+        <h4>Nia Huang</h4>
+        <p class="trainer-title">Founder & Lead Trainer</p>
+        <p>
+          With over 10 years of experience in personal training and mindfulness coaching, Nia founded Nialina Fitness to create a space where fitness meets tranquility.
+        </p>
+      </div>
+
+      <!-- Lina Card -->
+      <div class="trainer-card tilt-card reveal-on-scroll" style="animation-delay: 0.4s;">
+        <img src="Image/Lina.jpeg" alt="Co-Founder Lina" />
+        <h4>Lina Mendoza.</h4>
+        <p class="trainer-title">Co-Founder & Wellness Director</p>
+        <p>
+          Lina brings a holistic approach to wellness with her background in yoga, nutrition, and mental resilience. She ensures every client feels empowered from the inside out.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+    <section id="our-values" class="section reveal-on-scroll">
+      <div class="container">
+        <h2>Our Core Values</h2>
+        <div class="values-grid">
+          <div class="value-item reveal-on-scroll" style="animation-delay: 0.1s;">
+            <div class="value-icon" aria-label="Mindfulness">🧘‍♀️</div>
+            <h4>Mindfulness</h4>
+            <p>Integrating conscious movement and presence into every session.</p>
+          </div>
+          <div class="value-item reveal-on-scroll" style="animation-delay: 0.3s;">
+            <div class="value-icon" aria-label="Personalization">🤝</div>
+            <h4>Personalization</h4>
+            <p>Tailoring programs to your unique body, goals, and journey.</p>
+          </div>
+          <div class="value-item reveal-on-scroll" style="animation-delay: 0.5s;">
+            <div class="value-icon" aria-label="Growth">🌱</div>
+            <h4>Growth</h4>
+            <p>Fostering sustainable progress and holistic well-being.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="admin_login.html">Admin</a></li>
+          <li><a href="admin_login.php">Admin</a></li>
+          <li><a href="Signup.html">Admin</a></li>
+          <li><a href="signup.php">Admin</a></li>
+
+
+        </ul>
+      </nav>
+      <p>Nialina Fitness &copy; 2025 | Mindful Movement & Strength</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const navToggle = document.querySelector('.mobile-nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
+      navToggle.setAttribute('aria-expanded', !expanded);
+      navLinks.classList.toggle('show');
+    });
+
+    // Cursor dots
+    const cursorDot = document.querySelector('.cursor-dot');
+    const cursorOutline = document.querySelector('.cursor-dot-outline');
+
+    document.addEventListener('mousemove', (e) => {
+      cursorDot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+      cursorOutline.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    });
+
+    // Reveal on scroll
+    const revealElements = document.querySelectorAll('.reveal-on-scroll');
+    const revealOnScroll = () => {
+      const windowHeight = window.innerHeight;
+      revealElements.forEach((el) => {
+        const elementTop = el.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 100) {
+          el.classList.add('revealed');
+        }
+      });
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+
+    // Scroll Tilt Effect on .tilt-card
+    const tiltCards = document.querySelectorAll('.tilt-card');
+
+    const handleTilt = () => {
+      const windowHeight = window.innerHeight;
+      tiltCards.forEach((card) => {
+        const rect = card.getBoundingClientRect();
+        const cardCenterY = rect.top + rect.height / 2;
+        const windowCenterY = windowHeight / 2;
+        const distance = windowCenterY - cardCenterY;
+        const maxTilt = 15; // degrees max tilt
+        const tiltX = (distance / windowCenterY) * maxTilt;
+
+        // Limit tilt untuk  maxTilt range
+        const limitedTiltX = Math.max(Math.min(tiltX, maxTilt), -maxTilt);
+
+        card.style.transform = `perspective(600px) rotateX(${limitedTiltX}deg) scale(1.03)`;
+        card.style.transition = 'transform 0.2s ease-out';
+      });
+    };
+
+    window.addEventListener('scroll', handleTilt);
+    window.addEventListener('load', handleTilt);
+  </script>
+</body>
+</html>

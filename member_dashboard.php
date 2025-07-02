@@ -1,0 +1,96 @@
+<?php
+session_start();
+
+// Redirect if not logged in
+if (!isset($_SESSION['member'])) {
+    header("Location: login.php");
+    exit();
+}
+
+$fullname = $_SESSION['member']; // Set during login
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Member Dashboard | Nialina Fitness</title>
+  <link rel="stylesheet" href="NialinaStyle.css">
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: #f4f8f5;
+      margin: 0;
+    }
+    header, footer {
+      background-color: #2d4d3a;
+      color: white;
+      padding: 1rem 0;
+    }
+    header a, footer a {
+      color: white;
+      text-decoration: none;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .dashboard-box {
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    }
+    .dashboard-box h2 {
+      font-size: 2.2rem;
+      color: #2d4d3a;
+    }
+    .dashboard-box ul {
+      padding-left: 20px;
+      margin-top: 1rem;
+    }
+    .dashboard-box li {
+      padding: 10px 0;
+    }
+    .logout-button {
+      margin-top: 30px;
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #2d4d3a;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>Nialina Fitness</h1>
+  </div>
+</header>
+
+<section class="container">
+  <div class="dashboard-box">
+    <h2>Welcome, <?= htmlspecialchars($fullname) ?> 👋</h2>
+    <p>Here’s your member dashboard:</p>
+    <ul>
+      <li>🌿 View and Book Classes</li>
+      <li>🧘 Update Your Profile</li>
+      <li>💳 Manage Your Subscriptions</li>
+    </ul>
+
+    <a class="logout-button" href="logout.php">Logout</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2025 Nialina Fitness – Mindful Movement & Strength</p>
+  </div>
+</footer>
+
+</body>
+</html>

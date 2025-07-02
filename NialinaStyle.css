@@ -1,0 +1,835 @@
+/* --- NialinaStyle.css --- */
+
+/* Reset basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- Zen Theme Colors --- */
+:root 
+{
+    --bg-beige: #F5F5DC; /* Beige background */
+    --bg-soft-white: #FAF0E6; /* Soft off-white */
+    --pastel-green: #A8D8B9; /* Soft pastel green */
+    --dark-green: #556B2F; /* Darker green for text/accents */
+    --text-color: #4a4a4a; /* Dark grey for main text */
+    --light-grey: #ccc;
+    --white: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --admin-heading-color: #b22222; /* Example: Different color for Admin */
+}
+
+/* Basic body styling - Zen Theme Applied */
+body 
+{
+    font-family: 'Lato', sans-serif; /* Primary font */
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--bg-soft-white); /* Use soft white for main background */
+}
+/* Futuristic, Interactive H1 Styling */
+h1 {
+  font-family: 'Orbitron', sans-serif; /* Futuristic font */
+  font-size: 3rem;
+  font-weight: 700;
+  color: #00ff88; /* Neon green */
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 2;
+  text-shadow:
+    0 0 5px #00ff88,
+    0 0 10px #00ff88,
+    0 0 20px #00ff88,
+    0 0 40px #00ff88;
+  animation: flicker 3s infinite;
+}
+
+h1:hover {
+  transform: scale(1.05);
+  color: #66ffcc;
+  text-shadow:
+    0 0 10px #66ffcc,
+    0 0 20px #66ffcc,
+    0 0 30px #66ffcc,
+    0 0 50px #66ffcc;
+}
+
+/* Flicker animation for neon effect */
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+  }
+  20%, 24%, 55% {
+    opacity: 0.5;
+  }
+}
+
+ h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  color: var(--dark-green);
+  text-align: center;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+
+h1:hover, h2:hover, h3:hover 
+{
+  color: var(--pastel-green);
+  transform: scale(1.05);
+  text-shadow: 0 0 8px rgba(168, 216, 185, 0.6);
+}
+
+/* Container for centering content */
+.container {
+    width: 85%; /* Slightly wider */
+    max-width: 1100px; /* Max width */
+    margin: auto;
+    overflow: hidden; /* Clear floats */
+    padding: 20px 0;
+}
+
+/* Header Styling */
+header {
+    background: var(--white);
+    color: var(--dark-green);
+    padding-top: 20px; /* Adjusted padding */
+    min-height: 80px;
+    border-bottom: 1px solid var(--light-grey);
+    position: sticky; /* Make header sticky */
+    top: 0;
+    z-index: 1000; /* Ensure header is above other content */
+    box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+header #branding {
+    float: left;
+    margin-top: 5px; /* Align better */
+}
+
+header #branding h1 {
+    margin: 0;
+    font-size: 1.8em; /* Slightly larger */
+}
+header #branding h1 a {
+     color: var(--dark-green);
+     text-decoration: none;
+}
+
+/* Navigation Styling */
+header nav {
+    float: right;
+    margin-top: 15px; /* Align better */
+}
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline;
+    padding: 0 15px 0 15px; /* Adjusted padding */
+}
+
+header nav ul li a {
+    color: var(--dark-green);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: 700;
+    transition: color 0.3s ease; /* Smooth transition for hover */
+}
+
+/* --- Interactivity: Nav Link Hover --- */
+header nav ul li a:hover,
+header nav ul li.current a {
+    color: var(--pastel-green); /* Change color on hover */
+}
+
+/* === Hero Section Video Background === */
+/*
+#hero {
+  position: relative;
+  height: 100vh;
+  min-height: 500px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+*/
+
+
+/* === Hero Section with Video Background === */
+#hero {
+  position: relative;
+  height: 100vh;
+  min-height: 500px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding: 2rem;
+}
+
+.video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.video-bg video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  filter: blur(6px) brightness(0.5); /* Adjust for calm effect */
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Optional contrast overlay */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  max-width: 90%;
+}
+
+.hero-content h1 {
+  font-size: 3.5em;
+  margin-bottom: 1rem;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+  font-size: 1.3em;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #f5f5f5;
+}
+
+
+/* Button Styling */
+.button {
+    display: inline-block;
+    background: var(--pastel-green); /* Use pastel green */
+    color: var(--dark-green); /* Dark green text on button */
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 25px; /* More rounded corners for softer look */
+    margin: 5px;
+    font-weight: 700;
+    border: 2px solid transparent; /* For hover effect */
+    transition: all 0.3s ease; /* Smooth transition */
+    cursor: pointer; /* Indicate clickable */
+}
+
+/* --- Interactivity: Button Hover --- */
+.button:hover {
+    background: var(--dark-green);
+    color: var(--white);
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* General Sections Styling */
+.section {
+    padding: 60px 0; /* More vertical padding */
+    text-align: center;
+}
+.section:nth-child(even) { /* Alternate background for visual separation */
+    background-color: var(--bg-beige);
+}
+
+.section h2 {
+    margin-bottom: 40px; /* More space below heading */
+    font-size: 2.5em;
+}
+
+/* Paragraphs within sections (e.g., About page) */
+.section p {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto 20px auto; /* Center paragraphs horizontally */
+}
+
+/* Training Packages Section */
+#training-packages {
+    background-color: var(--bg-beige); /* Ensure beige background */
+}
+
+.packages {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.package-box {
+    width: 30%;
+    padding: 30px 25px; /* More padding */
+    margin-bottom: 30px;
+    background: var(--white);
+    border-radius: 10px; /* Slightly more rounded */
+    box-shadow: 0 3px 8px var(--shadow-color);
+    text-align: left; /* Align text left within box */
+    transition: all 0.3s ease; /* Transition for hover */
+}
+
+/* --- Interactivity: Package Box Hover --- */
+.package-box:hover {
+    transform: translateY(-5px); /* Lift effect */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.package-box h3 {
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    text-align: center; /* Center package title */
+}
+.package-box p {
+    margin-bottom: 15px; /* Space between paragraphs */
+    font-size: 0.95em;
+    text-align: left; /* Ensure package paragraphs are left aligned */
+}
+.package-box ul {
+    list-style: none; /* Remove default bullets */
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+.package-box ul li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 20px; /* Space for custom bullet */
+}
+/* Custom bullet point (zen style) */
+.package-box ul li::before {
+    content: '•'; /* Simple bullet, could use SVG or image */
+    color: var(--pastel-green);
+    font-size: 1.2em;
+    position: absolute;
+    left: 0;
+    top: -2px; /* Adjust vertical alignment */
+}
+.package-box .button { /* Center button within package box */
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0 auto; /* Center horizontally */
+    text-align: center;
+}
+
+
+/* Enquiry/Contact Form Section */
+#enquiry, #contact-form-section {
+    background-color: var(--white); /* Match header background */
+}
+#enquiry form, #contact-form-section form {
+    max-width: 600px;
+    margin: 20px auto; /* Center form */
+    padding: 30px;
+    background: var(--bg-soft-white); /* Light background for form area */
+    border-radius: 8px;
+    box-shadow: 0 3px 8px var(--shadow-color);
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--dark-green);
+    font-weight: bold;
+    text-align: left;
+}
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"], /* Added for login/signup */
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--light-grey);
+    border-radius: 5px;
+    font-family: 'Lato', sans-serif;
+    font-size: 1em;
+}
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical; /* Allow vertical resize */
+}
+.form-group select {
+     appearance: none; /* Remove default dropdown arrow */
+     background: var(--white) url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23556B2F%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E') no-repeat right 10px center;
+     background-size: 10px;
+     background-color: var(--white); /* Ensure select background is white */
+}
+/* Style form submit button */
+#enquiry form .button, 
+#contact-form-section form .button, 
+#auth-form-section form .button {
+    display: block;
+    width: 100%;
+    border: none; /* Remove default border */
+    margin-top: 10px; /* Space above button in forms */
+}
+
+/* Contact Details Specific */
+.contact-details {
+    margin-top: 40px;
+    text-align: center;
+}
+.contact-details p {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    text-align: center; /* Center contact details text */
+}
+.contact-details a {
+    color: var(--dark-green);
+    text-decoration: none;
+}
+.contact-details a:hover {
+    color: var(--pastel-green);
+}
+#map { /* Map placeholder */
+    margin-top: 40px;
+    height: 300px;
+    background-color: var(--light-grey);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    font-style: italic;
+}
+
+
+
+/* About Page - Team Section */
+.team-members {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+.team-member {
+    width: 30%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+.team-member h3 {
+    font-size: 1.4em;
+    margin-bottom: 5px;
+}
+.team-member p {
+    font-size: 0.95em;
+    color: var(--text-color);
+    text-align: center; /* Ensure titles/desc are centered */
+    max-width: 100%; /* Override general section p alignment */
+}
+
+/* Authentication Forms (Login/Sign Up/Admin) */
+#auth-form-section {
+    background-color: var(--bg-beige);
+    min-height: calc(100vh - 160px); /* Adjust if header/footer height changes */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0; /* Ensure padding */
+}
+#auth-form-section form {
+    width: 100%;
+    max-width: 450px;
+    margin: 20px auto;
+    padding: 40px;
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+#auth-form-section form h2 { /* Center align auth form titles */
+     text-align: center;
+     margin-bottom: 30px; /* More space below title */
+}
+/* Specific style for admin login heading if needed */
+#auth-form-section form h2:has(+ #username) { /* Rough targeting for admin login */
+     color: var(--admin-heading-color);
+}
+
+.form-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+.form-link a {
+    color: var(--dark-green);
+    text-decoration: none;
+    font-weight: bold;
+}
+.form-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* Footer Styling */
+footer {
+    padding: 30px 20px; /* More padding */
+    margin-top: 0; /* Remove margin if last section has padding */
+    color: var(--bg-soft-white); /* Light text on dark background */
+    background-color: var(--dark-green); /* Use dark green */
+    text-align: center;
+}
+footer nav ul {
+    margin-bottom: 15px;
+}
+footer nav ul li {
+    display: inline;
+    padding: 0 10px;
+}
+footer nav ul li a {
+     color: var(--bg-soft-white);
+     text-decoration: none;
+     transition: color 0.3s ease;
+}
+footer nav ul li a:hover {
+     color: var(--pastel-green);
+}
+footer p {
+    font-size: 0.9em;
+}
+
+.video-hero {
+  position: relative;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+  z-index: 1;
+}
+
+.video-hero h2,
+.video-hero p {
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.video-background iframe {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.video-overlay-content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+}
+
+.program-entry {
+  position: relative;
+  overflow: hidden;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.program-entry:hover {
+  transform: translateY(-5px);
+}
+
+/* Overlay video */
+.video-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* stays behind the content */
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.program-entry:hover .video-hover {
+  opacity: 0.4; /* you can increase for stronger effect */
+}
+
+.video-hover video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(1px) brightness(0.7); /* Optional: soften background */
+}
+
+/* Keep content above */
+.program-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Button is part of content */
+.button {
+  position: relative;
+  z-index: 2;
+}
+
+/* === Hero Section Video Background === */
+#hero {
+  position: relative;
+  height: 100vh;
+  min-height: 500px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.video-bg video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  filter: blur(6px) brightness(0.5); /* Adjust dimness here */
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Optional overlay for more contrast */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+}
+
+
+
+
+
+/* --- Responsive Design --- */
+@media(max-width: 768px) {
+    header #branding,
+    header nav {
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+    header nav ul li {
+        display: block; /* Stack nav items */
+        padding: 8px 0;
+    }
+    #hero h1 {
+        font-size: 2.5em; /* Adjust font size */
+    }
+    #hero p {
+        font-size: 1.1em;
+    }
+    .packages {
+        flex-direction: column; /* Stack columns */
+        align-items: center;
+    }
+    .package-box {
+        width: 90%; /* Adjust width for mobile */
+        margin-bottom: 25px;
+    }
+    .section p { /* Adjust paragraph width */
+         width: 90%;
+         max-width: 90%;
+    }
+    #enquiry form, 
+    #contact-form-section form, 
+    #auth-form-section form {
+        width: 90%;
+        padding: 25px;
+    }
+    .team-member { /* Adjust team member layout */
+         width: 45%;
+    }
+}
+
+@media(max-width: 480px) {
+    .container {
+        width: 95%; /* Use more width on small screens */
+    }
+     #hero h1 {
+        font-size: 2em;
+    }
+    #hero p {
+        font-size: 1em;
+    }
+     .section h2 {
+         font-size: 2em;
+    }
+    .package-box {
+        width: 95%; /* Full width on small screens */
+    }
+    .button {
+         padding: 10px 18px;
+         font-size: 0.9em;
+    }
+     #auth-form-section form {
+         width: 95%;
+         padding: 20px;
+    }
+     .team-member { /* Stack team members */
+        width: 90%;
+    }
+
+    body.dark-mode {
+  background-color: #1a1a1a;
+  color: #f5f5f5;
+}
+    body.dark-mode header,
+    body.dark-mode footer {
+    background-color: #121212;
+    color: #f5f5f5;
+    }
+    body.dark-mode a {
+  color: #a8d8b9;
+}
+    body.dark-mode .dashboard-box,
+    body.dark-mode .package-box,
+    body.dark-mode form,
+    body.dark-mode .dashboard-card {
+    background-color: #222;
+    color: #eee;
+    border-color: #444;
+    }
+    body.dark-mode input,
+    body.dark-mode textarea,
+    body.dark-mode select {
+    background-color: #333;
+    color: #eee;
+    border-color: #666;
+
+    /* Dark Mode Switch Style */
+.dark-mode-switch {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.dark-mode-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.dark-mode-switch .slider {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+  background-color: #ccc;
+  border-radius: 50px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.dark-mode-switch .slider:before {
+  content: "";
+  position: absolute;
+  height: 22px;
+  width: 22px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+/* Toggle ON */
+.dark-mode-switch input:checked + .slider {
+  background-color: #2d4d3a;
+}
+
+.dark-mode-switch input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+/* Optional: Moon/Sun background icon inside */
+.dark-mode-switch .slider::after {
+  content: "🌞";
+  position: absolute;
+  right: 8px;
+  top: 3px;
+  font-size: 16px;
+  transition: 0.4s;
+}
+
+.dark-mode-switch input:checked + .slider::after {
+  content: "🌙";
+  left: 8px;
+  right: auto;
+}
+
+}
+
+}

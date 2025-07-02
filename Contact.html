@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connect with Us | Nialina Fitness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Quicksand:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="NialinaStyle.css"/>
+
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s forwards;
+    }
+
+    .fade-in-delay {
+      animation-delay: 0.5s;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .motto {
+      font-size: 1.5em;
+      font-style: italic;
+      text-align: center;
+      margin: 40px auto 20px;
+      color: var(--dark-green);
+      max-width: 800px;
+    }
+
+    .map-container {
+      margin-top: 30px;
+      height: 300px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .floating-cta {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: var(--pastel-green);
+      color: var(--dark-green);
+      padding: 15px 25px;
+      border-radius: 50px;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      text-decoration: none;
+      transition: transform 0.3s ease;
+      z-index: 999;
+    }
+
+    .floating-cta:hover {
+      transform: scale(1.05);
+      background-color: var(--dark-green);
+      color: var(--white);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div id="branding">
+        <h1><a href="index.html">Nialina Fitness</a></h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li class="current"><a href="contact.html">Contact</a></li>
+          <li><a href="signup.php">Sign Up</a></li>
+          <li><a href="member_login.php">Member Login</a></li>
+          <li><a href="admin_login.php">Admin Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ✨ Zen Motto -->
+  <section class="section fade-in">
+    <div class="container">
+      <p class="motto">“Connection is the first step to transformation. We’re here when you’re ready.”</p>
+    </div>
+  </section>
+
+  <!-- ✨ Contact Form -->
+  <section id="contact-form-section" class="section fade-in fade-in-delay">
+    <div class="container">
+      <h2>Get In Touch</h2>
+      <p>Have questions about our programs, or ready to book a consultation? Fill out the form below or reach out directly!</p>
+      <form action="contact_form.php" method="POST">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone (Optional):</label>
+          <input type="text" id="phone" name="phone" />
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject:</label>
+          <select id="subject" name="subject" required>
+            <option value="" disabled selected>-- Select One --</option>
+            <option value="General Inquiry">General Inquiry</option>
+            <option value="Zen Starter Inquiry">Zen Starter Inquiry</option>
+            <option value="Balanced Body Inquiry">Balanced Body Inquiry</option>
+            <option value="Total Transformation Inquiry">Total Transformation Inquiry</option>
+            <option value="Consultation Request">Consultation Request</option>
+            <option value="Feedback">Feedback</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="button">Send Message</button>
+      </form>
+
+      <!-- ✨ Other Contact Info -->
+      <div class="contact-details">
+        <h3>Other Ways to Reach Us</h3>
+        <p>Email: <a href="mailto:info@nialinafitness.com">info@nialinafitness.com</a></p>
+        <p>Phone: <a href="tel:+60123456789">+60 12 345 6789</a></p>
+        <p>Location: Kuala Terengganu, Terengganu</p>
+      </div>
+
+      <!-- ✨ Embedded Google Map -->
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.938012499697!2d103.13957891541672!3d5.330201796133469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31b7b888c6e61d3b%3A0x8e15806b65a0c899!2sKuala%20Terengganu!5e0!3m2!1sen!2smy!4v1680000000000"
+          width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✨ Floating CTA -->
+  <a href="signup.html" class="floating-cta">Join Our Programs</a>
+
+  <!-- ✨ Footer -->
+  <footer>
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="member_login.php">Member Login</a></li>
+          <li><a href="admin_login.php">Admin Login</a></li>
+        </ul>
+      </nav>
+      <p>Nialina Fitness &copy; 2025 | Mindful Movement & Strength</p>
+    </div>
+  </footer>
+
+  <!-- ✨ Auto-select subject based on URL param -->
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const subjectParam = urlParams.get('subject');
+    if (subjectParam) {
+      const subjectSelect = document.getElementById('subject');
+      if (subjectSelect) {
+        for (let i = 0; i < subjectSelect.options.length; i++) {
+          if (subjectSelect.options[i].value.includes(subjectParam.split('%20')[0])) {
+            subjectSelect.value = subjectSelect.options[i].value;
+            break;
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>

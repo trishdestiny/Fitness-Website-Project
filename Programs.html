@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nialina Fitness | Wellness Begins with a Program</title>
+
+  <link rel="stylesheet" href="NialinaStyle.css" />
+  <style>
+    .program-entry {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      margin-bottom: 3rem;
+      background: white;
+      transition: transform 0.3s ease;
+    }
+
+    .program-entry:hover {
+      transform: translateY(-5px);
+    }
+
+    .program-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .program-description,
+    .program-includes {
+      flex: 1 1 300px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 1rem;
+      background: #556b2f;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .button:hover {
+      background: #344e41;
+    }
+
+    /* Overlay Video Styling */
+    .program-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      z-index: 2;
+    }
+
+    .program-entry:hover .program-overlay 
+    {
+      opacity: 1;
+    }
+
+    .program-overlay iframe 
+    {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .gallery 
+    {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .gallery img 
+    {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery img:hover 
+    {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) 
+    {
+      .program-content 
+      {
+        flex-direction: column;
+      }
+
+      .program-overlay iframe 
+      {
+        height: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1><a href="index.html">Nialina Fitness</a></h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li class="current"><a href="programs.html">Programs</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="signup.php">Sign Up</a></li>
+          <li><a href="member_login.php">Member Login</a></li>
+          <li><a href="admin_login.php">Admin Login</a></li>
+      
+
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h2>Our Training Programs</h2>
+        <p>Find the perfect path to achieve your fitness and wellness goals.</p>
+      </div>
+    </section>
+
+    <!-- Program 1 -->
+    <section class="program-entry">
+      <div class="program-overlay">
+        <iframe src="https://www.youtube.com/embed/GSENAaAu8QQ?autoplay=1&mute=1&controls=0&loop=1&playlist=GSENAaAu8QQ"></iframe>
+      </div>
+      <div class="program-content container">
+        <div class="program-description">
+          <h3>Zen Starter Package</h3>
+          <h4>Who is it for?</h4>
+          <p>Perfect for beginners looking to build a foundation in fitness and mindfulness.</p>
+          <h4>What's the focus?</h4>
+          <p>Foundational strength, mobility, and mindful movement practices.</p>
+        </div>
+        <div class="program-includes">
+          <h4>What's included?</h4>
+          <ul>
+            <li>Initial Consultation & Goal Setting</li>
+            <li>4 x 1-on-1 Personal Training Sessions</li>
+            <li>Mindfulness Techniques</li>
+            <li>Basic Home Workout Plan</li>
+            <li>Nutrition Guide PDF</li>
+          </ul>
+          <p><strong>Investment:</strong> RM 400</p>
+          <a href="contact.html" class="button">Enquire About Zen Starter</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Program 2 -->
+    <section class="program-entry">
+      <div class="program-overlay">
+        <iframe src="https://www.youtube.com/embed/oanjg8uCAe4?autoplay=1&mute=1&controls=0&loop=1&playlist=oanjg8uCAe4"></iframe>
+      </div>
+      <div class="program-content container">
+        <div class="program-description">
+          <h3>Balanced Body Package</h3>
+          <h4>Who is it for?</h4>
+          <p>For those with some experience seeking to build strength and connection.</p>
+          <h4>What's the focus?</h4>
+          <p>Endurance, flexibility, and intermediate mindfulness integration.</p>
+        </div>
+        <div class="program-includes">
+          <h4>What's included?</h4>
+          <ul>
+            <li>Fitness Assessment & Reassessment</li>
+            <li>8 x 1-on-1 Sessions (2 per week)</li>
+            <li>Body Scan Practices</li>
+            <li>Custom Workout Program</li>
+            <li>Nutrition Structure Advice</li>
+          </ul>
+          <p><strong>Investment:</strong> RM 750</p>
+          <a href="contact.html" class="button">Enquire About Balanced Body</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Program 3 -->
+    <section class="program-entry">
+      <div class="program-overlay">
+        <iframe src="https://www.youtube.com/embed/HQfF5XRVXjU?autoplay=1&mute=1&controls=0&loop=1&playlist=HQfF5XRVXjU"></iframe>
+      </div>
+      <div class="program-content container">
+        <div class="program-description">
+          <h3>Total Transformation Package</h3>
+          <h4>Who is it for?</h4>
+          <p>For individuals ready to commit to a total body & lifestyle transformation.</p>
+          <h4>What's the focus?</h4>
+          <p>Performance goals, stress management, and healthy habits.</p>
+        </div>
+        <div class="program-includes">
+          <h4>What's included?</h4>
+          <ul>
+            <li>Full Assessment & Tracking</li>
+            <li>12 x 1-on-1 Sessions (3 per week)</li>
+            <li>Advanced Techniques & Coaching</li>
+            <li>Periodized Plan + Home Options</li>
+            <li>Nutrition + Priority Booking</li>
+          </ul>
+          <p><strong>Investment:</strong> RM 1000</p>
+          <a href="contact.html" class="button">Enquire About Transformation</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section container">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <img src="Image/fitness6.jpeg" alt="Training 1" />
+        <img src="Image/fitness7.jpeg" alt="Training 2" />
+        <img src="Image/fitness8.jpeg" alt="Training 3" />
+        <img src="Image/fitness9.jpeg" alt="Training 4" />
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section container">
+      <h3>Ready to Begin?</h3>
+      <p>Getting started is easy! Contact us to book your consultation. Let’s grow together.</p>
+      <a href="contact.html" class="button">Book a Consultation</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Nialina Fitness &copy; 2025 | Mindful Movement & Strength</p>
+    </div>
+  </footer>
+</body>
+</html>

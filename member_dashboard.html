@@ -1,0 +1,88 @@
+<?php
+session_start();
+
+// Simulate login check (use actual login logic in production)
+if (!isset($_SESSION['member'])) {
+    header("Location: login.php");
+    exit();
+}
+
+$fullname = $_SESSION['member']; // Set this during login
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Member Dashboard | Nialina Fitness</title>
+  <link rel="stylesheet" href="NialinaStyle.css">
+  <style>
+    .dashboard {
+      padding: 2rem;
+      background-color: #f8f9f5;
+      border-radius: 12px;
+      max-width: 700px;
+      margin: 2rem auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .dashboard h2 {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 2.5rem;
+      color: #2d4d3a;
+    }
+    .dashboard ul {
+      list-style: none;
+      padding: 0;
+    }
+    .dashboard ul li {
+      background: #e0ede4;
+      padding: 1rem;
+      margin: 10px 0;
+      border-radius: 8px;
+      font-family: 'Lato', sans-serif;
+    }
+    .logout-button {
+      margin-top: 20px;
+      background: #2d4d3a;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div id="branding">
+        <h1><a href="index.html">Nialina Fitness</a></h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li class="current"><a href="member_dashboard.php">Dashboard</a></li>
+          <li><a href="logout.php">Logout</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="dashboard">
+    <h2>Welcome, <?= htmlspecialchars($fullname) ?> 👋</h2>
+    <p>Here’s your member dashboard:</p>
+    <ul>
+      <li>🌿 View Class Schedules</li>
+      <li>🧘 Update Profile</li>
+      <li>💳 Manage Subscriptions</li>
+    </ul>
+
+    <a class="logout-button" href="logout.php">Logout</a>
+  </section>
+
+</body>
+</html>
