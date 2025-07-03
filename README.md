@@ -44,9 +44,7 @@ A web platform designed to help users achieve their fitness goals through person
 
 Contributions are welcome! Please fork the repository and submit a pull request. For major changes, open an issue first to discuss what you’d like to change.
 
-## License
-
-This project is licensed under the MIT License.
+/This is our group academic project in which @wannuramelina and @trishdestiny work on it.
 
 ---
 
